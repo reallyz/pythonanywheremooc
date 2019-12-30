@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8" />
+    <title>Charts - ETF50</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/adminia.css') }}" rel="stylesheet" /> 
+    <link href="{{ url_for('static', filename='css/adminia-responsive.css') }}" rel="stylesheet" /> 
+    <script src="{{ url_for('static', filename='js/plotly.min.js') }}" ></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span></a><a class="brand" href="./">Python 程序设计</a>
+		</div> <!-- /container --></div> <!-- /navbar-inner --></div> <!-- /navbar -->
+<div id="content"><div class="container"><div class="row"><div class="span3">
+				<div class="account-container">
+					<div class="account-avatar">
+						<img src="../static/img/Python.jpg" alt="" class="thumbnail" />
+					</div> <!-- /account-avatar -->
+				    <div class="account-details">
+					    <span class="account-name">Python </span>
+						<span class="account-role">开发者</span>
+				</div> <!-- /account-details --></div> <!-- /account-container --><hr />
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">
+					<li><a href="./"><i class="icon-home"></i>半年线图</a></li>
+					<li><a href="/candle"><i class="icon-home"></i>K线图</a></li>
+				</ul>	
+				<hr />
+                <div class="sidebar-extra"><p>此web应用程序使用了以下Python第三方库：</p>
+                    <ul><li>Plotly -- 数据可视化库</li><li>Pandas -- 数据处理及分析库</li> 
+                        <li>Tushare -- 财经数据接口库</li><li>Flask --  Web应用框架</li></ul>
+ </div><br /></div> <!-- /span3 -->
+			<div class="span9">
+				<div class="widget">
+					<div class="widget-header"><h3>Candle Stick </h3></div> 
+					<div class="widget-content">			
+					      <div class='graph'>{{context.candle_stick |safe }}</div>
+	        </div></div></div> <!-- /span9 -->
+</div> <!-- /row --></div> <!-- /container --></div> <!-- /content --></body></html>
